@@ -1,11 +1,23 @@
+<div class="contmovie">
 {{#each film}}
-  <h1>{{title}} </h1>
-  <h2>{{director}}</h2>
-  {{#each stars}}
-  <ul>
+  <div class= "picture">
+    <img src="{{image}}" alt="">
+  </div>
+  <div class="description">
+    <h1>{{title}} </h1>
+    
+    <h2>{{this.director}}</h2> 
+    {{#each stars}}
+    <ul>
     <li>{{this}}</li>
-  </ul>
+    </ul>
   {{/each}}
-  <img src="{{image}}" alt="">
-  <p>{{description}}</p>
+  
+    <p class="sinopsi">{{description}}</p>
+     {{#each showtimes}}
+            <span>{{this}} | </span>
+    {{/each}}
+  </div>
+  
   {{/each}}
+</div>
