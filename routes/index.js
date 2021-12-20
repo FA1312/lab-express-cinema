@@ -13,9 +13,12 @@ router.get("/movies", (req, res) => {
     .catch((err) => console.error(err));
 });
 
-router.get("/movie/:id", (req, res) => {
-  const selMovie = Movie.findById(req.params.id);
-  res.render("detail", selMovie);
+router.get("/movies/:id", (req, res, next) => {
+  Movie.findById(req.params.id)
+    .then((selMovie) => {
+      res.render("detail", { selMovie });
+    })
+    .catch((err) => console.error(err));
 });
 
 module.exports = router;
