@@ -1,23 +1,24 @@
 <div class="contmovie"> 
-{{#each selMovie}}
-  mamma
+
   <div class= "picture">
-    <img src="{{image}}" alt="">
+    <img src="{{selMovie.image}}" alt="">
   </div>
   <div class="description">
-    <h1>{{title}} </h1>
-    <h2> {{director}}</h2> 
-    {{#each stars}}
-    <ul>
+    <h1>{{selMovie.title}} </h1>
+    <h2> Director: {{selMovie.director}}</h2> 
+    <h3>Starring with:</h3>
+    {{#each selMovie.stars}}
+    
+    <ul> 
     <li>{{this}}</li>
     </ul>
   {{/each}}
   
-    <p class="sinopsi">{{description}}</p>
-     {{#each showtimes}}
+    <p class="sinopsi">{{selMovie.description}}</p>
+     {{#each selMovie.showtimes}}
             <span>{{this}} | </span>
     {{/each}}
   </div>
   
-  {{/each}}
+  
 </div>
